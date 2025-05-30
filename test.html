@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
+<html lang="zh-TW" class="scroll-smooth"> <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Driving Digital Strategy Podcast</title>
@@ -29,10 +28,38 @@
     }
   </script>
   <style>
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #1e2a38; }
-    ::-webkit-scrollbar-thumb { background: #3b4a5f; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #2196f3; }
+    /* 自訂捲軸樣式 (可選) */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1e2a38;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3b4a5f;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2196f3;
+    }
+    /* 音訊播放器樣式，使其更適合深色主題 */
+    audio::-webkit-media-controls-panel {
+      background-color: #1e2a38;
+      border-radius: 8px;
+    }
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-mute-button,
+    audio::-webkit-media-controls-timeline-container,
+    audio::-webkit-media-controls-current-time-display,
+    audio::-webkit-media-controls-time-remaining-display,
+    audio::-webkit-media-controls-volume-slider-container,
+    audio::-webkit-media-controls-fullscreen-button {
+      filter: invert(1) brightness(1.5) saturate(0.5); /* 調整預設控制項使其變亮 */
+    }
+    audio::-webkit-media-controls-timeline,
+    audio::-webkit-media-controls-volume-slider {
+       filter: hue-rotate(180deg) contrast(0.8); /* 嘗試使滑桿更適合 */
+    }
   </style>
 </head>
 <body class="bg-brand-deep-blue text-brand-text-primary font-sans antialiased">
@@ -45,43 +72,299 @@
         </svg>
         <h1 class="text-4xl md:text-5xl font-bold text-brand-text-primary">Driving Digital Strategy</h1>
       </div>
-      <p class="text-lg md:text-xl text-brand-text-muted">A chapter-by-chapter podcast guide</p>
-    </div>
+      <p class="text-lg md:text-xl text-brand-text-muted">各章節 Podcast 指南</p> </div>
   </header>
 
   <section class="container mx-auto px-6 py-8">
     <div class="max-w-3xl mx-auto bg-brand-dark-blue p-6 rounded-lg shadow-xl">
       <p class="text-brand-text-secondary text-lg leading-relaxed">
-        Welcome to the Driving Digital Strategy podcast series — a companion guide to Sunil Gupta’s influential book. Each episode distills key insights from a chapter, exploring how businesses can successfully embrace digital transformation and rethink their strategies in a connected world.
-      </p>
+        歡迎來到 Driving Digital Strategy Podcast 系列 — Sunil Gupta 的暢銷書的配套指南。每一集都提煉了書中一個章節的關鍵見解，探討企業如何在互聯世界中成功擁抱數位轉型並重新思考其策略。 </p>
     </div>
   </section>
 
-  <section class="container mx-auto px-6 py-8">
+  <nav id="toc-nav" class="container mx-auto px-6 py-8">
     <div class="max-w-3xl mx-auto bg-brand-dark-blue p-6 rounded-lg shadow-xl">
-      <h2 class="text-2xl font-semibold text-brand-accent-light mb-6">Listen to All Chapters</h2>
-      <ul class="space-y-6">
-        <!-- Example entry -->
+      <h2 class="text-2xl font-semibold text-brand-accent-light mb-6 flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        章節 </h2>
+      <ul class="space-y-3 md:grid md:grid-cols-2 md:gap-x-6 md:space-y-0">
         <li>
-          <h3 class="text-xl font-medium text-brand-text-primary">Chapter 1 – Business Scope</h3>
-          <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-2 text-brand-accent-light italic text-base">
-            "In a digital world, companies must rethink the scope of their business—not just what they do, but what problems they solve for customers."
-          </blockquote>
-          <audio controls class="w-full mt-3 rounded-md">
-            <source src="audio/Chapter01.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-          </audio>
+          <a href="#chapter1" class="group flex items-center text-brand-accent-light hover:text-brand-accent transition-colors duration-200 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3 text-brand-light-blue group-hover:text-brand-accent transition-colors duration-200">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="group-hover:underline">第一章 – 業務範圍</span> </a>
         </li>
-        <!-- Repeat for other chapters -->
+        <li>
+          <a href="#chapter2" class="group flex items-center text-brand-accent-light hover:text-brand-accent transition-colors duration-200 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3 text-brand-light-blue group-hover:text-brand-accent transition-colors duration-200">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="group-hover:underline">第二章 – 商業模式</span> </a>
+        </li>
+        <li>
+          <a href="#chapter3" class="group flex items-center text-brand-accent-light hover:text-brand-accent transition-colors duration-200 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3 text-brand-light-blue group-hover:text-brand-accent transition-colors duration-200">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="group-hover:underline">第三章 – 平台與生態系統</span> </a>
+        </li>
+         <li>
+          <a href="#chapter4" class="group flex items-center text-brand-accent-light hover:text-brand-accent transition-colors duration-200 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3 text-brand-light-blue group-hover:text-brand-accent transition-colors duration-200">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="group-hover:underline">第四章 – 重新思考研發與創新</span> </a>
+        </li>
+        <li>
+          <a href="#chapter5" class="group flex items-center text-brand-accent-light hover:text-brand-accent transition-colors duration-200 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3 text-brand-light-blue group-hover:text-brand-accent transition-colors duration-200">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="group-hover:underline">第五章 – 卓越營運</span> </a>
+        </li>
+        <li>
+          <a href="#chapter6" class="group flex items-center text-brand-accent-light hover:text-brand-accent transition-colors duration-200 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3 text-brand-light-blue group-hover:text-brand-accent transition-colors duration-200">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="group-hover:underline">第六章 – 全通路策略</span> </a>
+        </li>
+        <li>
+          <a href="#chapter7" class="group flex items-center text-brand-accent-light hover:text-brand-accent transition-colors duration-200 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3 text-brand-light-blue group-hover:text-brand-accent transition-colors duration-200">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="group-hover:underline">第七章 – 獲取客戶</span> </a>
+        </li>
+        <li>
+          <a href="#chapter8" class="group flex items-center text-brand-accent-light hover:text-brand-accent transition-colors duration-200 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3 text-brand-light-blue group-hover:text-brand-accent transition-colors duration-200">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="group-hover:underline">第八章 – 消費者互動</span> </a>
+        </li>
+        <li>
+          <a href="#chapter9" class="group flex items-center text-brand-accent-light hover:text-brand-accent transition-colors duration-200 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3 text-brand-light-blue group-hover:text-brand-accent transition-colors duration-200">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="group-hover:underline">第九章 – 衡量與優化行銷支出</span> </a>
+        </li>
+        <li>
+          <a href="#chapter10" class="group flex items-center text-brand-accent-light hover:text-brand-accent transition-colors duration-200 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3 text-brand-light-blue group-hover:text-brand-accent transition-colors duration-200">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="group-hover:underline">第十章 – 管理數位轉型</span> </a>
+        </li>
+        <li>
+          <a href="#chapter11" class="group flex items-center text-brand-accent-light hover:text-brand-accent transition-colors duration-200 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3 text-brand-light-blue group-hover:text-brand-accent transition-colors duration-200">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="group-hover:underline">第十一章 – 設計創新組織</span> </a>
+        </li>
+        <li>
+          <a href="#chapter12" class="group flex items-center text-brand-accent-light hover:text-brand-accent transition-colors duration-200 py-1">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3 text-brand-light-blue group-hover:text-brand-accent transition-colors duration-200">
+               <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+            </svg>
+            <span class="group-hover:underline">第十二章 – 技能、能力與人才管理</span> </a>
+        </li>
       </ul>
     </div>
-  </section>
+  </nav>
+
+  <main class="container mx-auto px-6 py-8 space-y-12">
+    <section id="chapter1" class="episode bg-brand-dark-blue p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-brand-accent/30">
+      <h2 class="text-3xl font-semibold text-brand-text-primary mb-4">第一章 – 業務範圍</h2>
+      <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-6 text-brand-accent-light italic text-lg">
+        "在數位世界中，公司必須重新思考其業務範圍——不僅僅是他們做什麼，而是他們為客戶解決什麼問題。"
+      </blockquote>
+      <audio controls src="audio/Chapter01.mp3" class="w-full mt-6 rounded-md">
+        您的瀏覽器不支援音訊播放。
+      </audio>
+    </section>
+
+    <section id="chapter2" class="episode bg-brand-dark-blue p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-brand-accent/30">
+      <h2 class="text-3xl font-semibold text-brand-text-primary mb-4">第二章 – 商業模式</h2>
+      <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-6 text-brand-accent-light italic text-lg">
+        "數位化使您能夠將價值創造與價值獲取脫鉤。"
+      </blockquote>
+      <audio controls src="audio/Chapter02.mp3" class="w-full mt-6 rounded-md">
+        您的瀏覽器不支援音訊播放。
+      </audio>
+    </section>
+
+    <section id="chapter3" class="episode bg-brand-dark-blue p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-brand-accent/30">
+        <h2 class="text-3xl font-semibold text-brand-text-primary mb-4">第三章 – 平台與生態系統</h2>
+        <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-6 text-brand-accent-light italic text-lg">
+            "在平台業務中，價值的創造不是透過控制資源，而是透過協調互動。"
+        </blockquote>
+        <audio controls src="audio/Chapter03.mp3" class="w-full mt-6 rounded-md">
+            您的瀏覽器不支援音訊播放。
+        </audio>
+    </section>
+
+    <section id="chapter4" class="episode bg-brand-dark-blue p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-brand-accent/30">
+        <h2 class="text-3xl font-semibold text-brand-text-primary mb-4">第四章 – 重新思考研發與創新</h2>
+        <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-6 text-brand-accent-light italic text-lg">
+            "你無法在孤立的環境中有效地創新。最好的點子可能來自你的圍牆之外。"
+        </blockquote>
+        <audio controls src="audio/Chapter04.mp3" class="w-full mt-6 rounded-md">
+            您的瀏覽器不支援音訊播放。
+        </audio>
+    </section>
+
+    <section id="chapter5" class="episode bg-brand-dark-blue p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-brand-accent/30">
+        <h2 class="text-3xl font-semibold text-brand-text-primary mb-4">第五章 – 卓越營運</h2>
+        <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-6 text-brand-accent-light italic text-lg">
+            "數位轉型並非關於自動化——而是關於重新構想工作的完成方式。"
+        </blockquote>
+        <audio controls src="audio/Chapter05.mp3" class="w-full mt-6 rounded-md">
+            您的瀏覽器不支援音訊播放。
+        </audio>
+    </section>
+
+    <section id="chapter6" class="episode bg-brand-dark-blue p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-brand-accent/30">
+        <h2 class="text-3xl font-semibold text-brand-text-primary mb-4">第六章 – 全通路策略</h2>
+        <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-6 text-brand-accent-light italic text-lg">
+            "顧客不會以通路來思考，他們是以體驗來思考。"
+        </blockquote>
+        <audio controls src="audio/Chapter06.mp3" class="w-full mt-6 rounded-md">
+            您的瀏覽器不支援音訊播放。
+        </audio>
+    </section>
+
+    <section id="chapter7" class="episode bg-brand-dark-blue p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-brand-accent/30">
+        <h2 class="text-3xl font-semibold text-brand-text-primary mb-4">第七章 – 獲取客戶</h2>
+        <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-6 text-brand-accent-light italic text-lg">
+            "傳統的銷售漏斗已死。如今，顧客旅程是非線性的、個人化的且動態的。"
+        </blockquote>
+        <audio controls src="audio/Chapter07.mp3" class="w-full mt-6 rounded-md">
+            您的瀏覽器不支援音訊播放。
+        </audio>
+    </section>
+
+    <section id="chapter8" class="episode bg-brand-dark-blue p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-brand-accent/30">
+        <h2 class="text-3xl font-semibold text-brand-text-primary mb-4">第八章 – 消費者互動</h2>
+        <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-6 text-brand-accent-light italic text-lg">
+            "互動不再是推送訊息——而是創造有意義、持續的互動。"
+        </blockquote>
+        <audio controls src="audio/Chapter08.mp3" class="w-full mt-6 rounded-md">
+            您的瀏覽器不支援音訊播放。
+        </audio>
+    </section>
+
+    <section id="chapter9" class="episode bg-brand-dark-blue p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-brand-accent/30">
+        <h2 class="text-3xl font-semibold text-brand-text-primary mb-4">第九章 – 衡量與優化行銷支出</h2>
+        <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-6 text-brand-accent-light italic text-lg">
+            "你無法管理你無法衡量的東西——但要小心衡量錯誤的東西。"
+        </blockquote>
+        <audio controls src="audio/Chapter09.mp3" class="w-full mt-6 rounded-md">
+            您的瀏覽器不支援音訊播放。
+        </audio>
+    </section>
+
+    <section id="chapter10" class="episode bg-brand-dark-blue p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-brand-accent/30">
+        <h2 class="text-3xl font-semibold text-brand-text-primary mb-4">第十章 – 管理數位轉型</h2>
+        <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-6 text-brand-accent-light italic text-lg">
+            "文化會把策略當早餐吃掉，尤其是在數位轉型期間。"
+        </blockquote>
+        <audio controls src="audio/Chapter10.mp3" class="w-full mt-6 rounded-md">
+            您的瀏覽器不支援音訊播放。
+        </audio>
+    </section>
+
+    <section id="chapter11" class="episode bg-brand-dark-blue p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-brand-accent/30">
+        <h2 class="text-3xl font-semibold text-brand-text-primary mb-4">第十一章 – 設計創新組織</h2>
+        <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-6 text-brand-accent-light italic text-lg">
+            "即使是最好的點子也需要一個落腳點——否則它們在規模化之前就會失敗。"
+        </blockquote>
+        <audio controls src="audio/Chapter11.mp3" class="w-full mt-6 rounded-md">
+            您的瀏覽器不支援音訊播放。
+        </audio>
+    </section>
+
+    <section id="chapter12" class="episode bg-brand-dark-blue p-6 md:p-8 rounded-xl shadow-2xl transition-all duration-300 hover:shadow-brand-accent/30">
+        <h2 class="text-3xl font-semibold text-brand-text-primary mb-4">第十二章 – 技能、能力與人才管理</h2>
+        <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-6 text-brand-accent-light italic text-lg">
+            "你可以購買技術，但你無法購買轉型。這需要人才。"
+        </blockquote>
+        <audio controls src="audio/Chapter12.mp3" class="w-full mt-6 rounded-md">
+            您的瀏覽器不支援音訊播放。
+        </audio>
+    </section>
+  </main>
 
   <footer class="bg-brand-medium-blue mt-12">
     <div class="container mx-auto px-6 py-8 text-center text-brand-text-muted">
-      &copy; 2025 Driving Digital Strategy Podcast. All rights reserved.
-    </div>
+      &copy; ${new Date().getFullYear()} Driving Digital Strategy Podcast. 保留所有權利。 </div>
   </footer>
+
+  <button id="scrollToTopBtn" title="回到頂部"
+          class="fixed bottom-6 right-6 p-3 bg-brand-accent hover:bg-opacity-80 text-white rounded-full shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none focus:outline-none focus:ring-2 focus:ring-brand-accent-light focus:ring-opacity-50">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+  </button>
+
+  <script>
+    // 回到頂部按鈕邏輯
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    if (scrollToTopBtn) { // 檢查按鈕是否存在
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.opacity = "1";
+                scrollToTopBtn.classList.remove('pointer-events-none');
+            } else {
+                scrollToTopBtn.style.opacity = "0";
+                scrollToTopBtn.classList.add('pointer-events-none');
+            }
+        };
+
+        scrollToTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    } else {
+        console.warn("ID 為 'scrollToTopBtn' 的回到頂部按鈕未找到。");
+    }
+
+    // 目錄連結平滑滾動
+    document.querySelectorAll('#toc-nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId.length > 1 && targetId.startsWith('#')) {
+                try {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offset = 80; // 如果您有固定頁首，請調整此值
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = targetElement.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        console.warn(`平滑滾動目標元素 '${targetId}' 未找到。`);
+                    }
+                } catch (error) {
+                    console.error(`尋找平滑滾動目標 '${targetId}' 時發生錯誤:`, error);
+                }
+            } else {
+                console.warn(`用於平滑滾動的 href 屬性無效: '${targetId}'`);
+            }
+        });
+    });
+  </script>
 
 </body>
 </html>
