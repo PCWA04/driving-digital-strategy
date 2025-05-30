@@ -8,13 +8,80 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
-…            top: offsetPosition,
-            behavior: 'smooth'
-          });
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            'brand-deep-blue': '#0f1624',
+            'brand-dark-blue': '#1a2433',
+            'brand-medium-blue': '#1e2a38',
+            'brand-light-blue': '#3b4a5f',
+            'brand-accent': '#2196f3',
+            'brand-accent-light': '#90caf9',
+            'brand-text-primary': '#ffffff',
+            'brand-text-secondary': '#cfd8dc',
+            'brand-text-muted': '#a0aab8',
+          }
         }
-      });
-    });
+      }
+    }
   </script>
+  <style>
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #1e2a38; }
+    ::-webkit-scrollbar-thumb { background: #3b4a5f; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2196f3; }
+  </style>
+</head>
+<body class="bg-brand-deep-blue text-brand-text-primary font-sans antialiased">
+
+  <header class="bg-brand-medium-blue shadow-lg">
+    <div class="container mx-auto px-6 py-10 text-center">
+      <div class="flex justify-center items-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-brand-accent mr-3">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z" />
+        </svg>
+        <h1 class="text-4xl md:text-5xl font-bold text-brand-text-primary">Driving Digital Strategy</h1>
+      </div>
+      <p class="text-lg md:text-xl text-brand-text-muted">A chapter-by-chapter podcast guide</p>
+    </div>
+  </header>
+
+  <section class="container mx-auto px-6 py-8">
+    <div class="max-w-3xl mx-auto bg-brand-dark-blue p-6 rounded-lg shadow-xl">
+      <p class="text-brand-text-secondary text-lg leading-relaxed">
+        Welcome to the Driving Digital Strategy podcast series — a companion guide to Sunil Gupta’s influential book. Each episode distills key insights from a chapter, exploring how businesses can successfully embrace digital transformation and rethink their strategies in a connected world.
+      </p>
+    </div>
+  </section>
+
+  <section class="container mx-auto px-6 py-8">
+    <div class="max-w-3xl mx-auto bg-brand-dark-blue p-6 rounded-lg shadow-xl">
+      <h2 class="text-2xl font-semibold text-brand-accent-light mb-6">Listen to All Chapters</h2>
+      <ul class="space-y-6">
+        <!-- Example entry -->
+        <li>
+          <h3 class="text-xl font-medium text-brand-text-primary">Chapter 1 – Business Scope</h3>
+          <blockquote class="border-l-4 border-brand-accent pl-4 py-2 my-2 text-brand-accent-light italic text-base">
+            "In a digital world, companies must rethink the scope of their business—not just what they do, but what problems they solve for customers."
+          </blockquote>
+          <audio controls class="w-full mt-3 rounded-md">
+            <source src="audio/Chapter01.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </li>
+        <!-- Repeat for other chapters -->
+      </ul>
+    </div>
+  </section>
+
+  <footer class="bg-brand-medium-blue mt-12">
+    <div class="container mx-auto px-6 py-8 text-center text-brand-text-muted">
+      &copy; 2025 Driving Digital Strategy Podcast. All rights reserved.
+    </div>
+  </footer>
 
 </body>
 </html>
